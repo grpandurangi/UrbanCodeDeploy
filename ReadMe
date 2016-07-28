@@ -1,3 +1,7 @@
 Hello,
 
 This is UrabanCode Deploy ReadMe.
+
+Changes that needs to be done
+
+1.Update the SERVER_IP in the files/default/auto_install_ucd_agent.sh and templates/default/installed.properties.erb
