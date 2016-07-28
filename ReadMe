@@ -1,3 +1,16 @@
 Hello,
 
 This is UrabanCode Deploy ReadMe.
+
+Changes that needs to be done
+
+1.Update the SERVER_IP in the files/default/auto_install_ucd_agent.sh and templates/default/installed.properties.erb
+2.Below command needs to be executed from Workstation:
+
+ knife bootstrap <NEW AGENT> --ssh-user azureuser --ssh-password 'Welcome1Japan'  --sudo  --node-name RHEL5ART --run-list 'recipe[ucd_agent]'
+ knife bootstrap 13.78.49.13 --ssh-user azureuser --sudo --identity-file ./chefadmin.pem --node-name RHEL7IBM --run-list 'recipe[ucd_agent]'
+
+Other commands required:
+knife cookbook upload ucd_agent
+knife node delete --yes <Existing Node to be delted> 
+knife client delete --yes <Existing Node to be delted>
