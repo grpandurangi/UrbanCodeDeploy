@@ -1,0 +1,11 @@
+IBM\ UrbanCode\ Deploy/java.home=/usr/lib/jvm/java-1.8.0-ibm-1.8.0.3.0.x86_64/jre
+agent.HttpFailoverHandler.disabled=null
+agent.jms.full_encryption=false
+locked/agent.brokerUrl=failover\:(ah3\://13.78.48.145\:7918)
+locked/agent.home=/opt/ibm-ucd/agent
+locked/agent.jms.remote.host=13.78.48.145
+locked/agent.jms.remote.port=7918
+locked/agent.mutual_auth=false
+locked/agent.name=<%= node['hostname'] %>
+system.default.encoding=UTF-8
+verify.server.identity=false
