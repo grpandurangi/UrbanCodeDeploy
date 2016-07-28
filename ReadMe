@@ -14,3 +14,5 @@ Other commands required:
 knife cookbook upload ucd_agent
 knife node delete --yes <Existing Node to be delted> 
 knife client delete --yes <Existing Node to be delted>
+
+Verify if the UCD agent is running on the remote
