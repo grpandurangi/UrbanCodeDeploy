@@ -60,7 +60,7 @@ sleep 20
 
 netstat -aon | grep 7918 >/dev/null
 if [[ "$?" -eq "0" ]]; then
-echo "All Good"
+echo "UCD agent successfully installed and started"
 else
 echo "Issue in the setup."
 fi
