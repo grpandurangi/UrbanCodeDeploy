@@ -6,7 +6,11 @@ HOSTNAME=$(hostname -s)
 PROPERTIES_FILE="/tmp/installed.properties"
 AGENT="/opt/ibm-ucd/agent/bin/agent"
 
-`which java` -version 2>>/dev/null
+
+JRE_FOLDER=$(find /usr -type d -name jre|head -1)
+sed -i "s#<JRE_FOLDER>#${JRE_FOLDER}#g" $PROPERTIES_FILE
+
+$JRE_FOLDER/bin/java -version 2>>/dev/null
 RC=$?
 
 if [[ $RC -gt "0" ]] ; then
@@ -14,9 +18,6 @@ if [[ $RC -gt "0" ]] ; then
 yum -y install java >> $HOSTNAME.install.log
 
 fi
-
-JRE_FOLDER=$(find /usr -type d -name jre|head -1)
-sed -i "s#<JRE_FOLDER>#${JRE_FOLDER}#g" $PROPERTIES_FILE
 
 # Previous stuff cleanup if any
 kill -9 `ps -eaf|grep ibm-ucd|grep -v grep|awk '{print $2}'` 2>>/dev/null
